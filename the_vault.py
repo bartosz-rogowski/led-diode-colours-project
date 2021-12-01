@@ -65,6 +65,7 @@ def get_average_colour_from_screen(screen_size: tuple=(1920,1080), step: int=40)
 	return colour
 
 
-# function of RAINBOW MODE (Natalia's Version)
-#
-#
+def get_rainbow_colour(hue):
+	(r, g, b) = colorsys.hsv_to_rgb(hue, 1.0, 1.0)
+	rainbow_colour = (int(255 * r), int(255 * g), int(255 * b))
+	return rainbow_colour
