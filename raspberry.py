@@ -3,7 +3,6 @@
 import serial
 from sys import exit
 import time
-import colorsys
 from the_vault \
 	import get_average_colour_from_screen, get_rainbow_colour, print_menu, clear_console
 
@@ -52,9 +51,8 @@ if __name__ == '__main__':
 				# ser.write(mode.encode())
 				while True:
 					try:
-						print("Blank Space (for now)")
-						time.sleep(10)
-						# message = f"{colours[0]},{colours[1]},{colours[2]}"
+						pass
+						# message = f"0,0,0"
 						# ser.write(message.encode())
 					except KeyboardInterrupt:
 						# flag = 1

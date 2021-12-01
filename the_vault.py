@@ -5,6 +5,7 @@ import numpy as np
 from PIL import ImageGrab
 import time
 import os
+import colorsys
 
 def print_menu():
     '''Function printing menu on terminal.
