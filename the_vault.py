@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''
 This module contains tools and algorithms helpful in project.
 '''
