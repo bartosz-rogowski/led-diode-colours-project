@@ -2,7 +2,8 @@
 This module contains tools and algorithms helpful in project.
 '''
 import numpy as np
-from PIL import ImageGrab
+#from PIL import ImageGrab
+import pyscreenshot as ImageGrab
 import time
 import os
 import colorsys
@@ -40,7 +41,6 @@ def most_frequent(List):
 
 def get_average_colour_from_screen(screen_size: tuple=(1920,1080), step: int=40):
 	''' returns average value of (rbg) from screen
-
 	Arguments:
 		screen_size - pixel size of screen given in tuple (width, height)
 		step - number of pixels 

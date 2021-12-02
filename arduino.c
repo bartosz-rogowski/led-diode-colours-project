@@ -12,12 +12,12 @@ int sensorB = A0;
 void (*func)();
 
 //encodes values from message from the raspberry
-double* get_values_from_message(char* message)
+int* get_values_from_message(char* message)
 {
 	char delim[] = ",";
 	char *ptr = strtok(message, delim);
 
-	double* values = calloc(4, sizeof(double));
+	int* values = calloc(4, sizeof(int));
 	int i = 0;
 
 	while(ptr)
@@ -73,9 +73,10 @@ void readFromColourSensor()
 		
 		Serial.println();
 		Serial.println();
-		char* message = Serial.read();
-		double* values = get_values_from_message(message);
-		if(values[3] == 1.0)
+		char* message_char;
+		message.toCharArray(message_char, message.length())
+		int* values = get_values_from_message(message_char);
+		if(values[3] == 1)
 		{
 			free(values);
 			break;
@@ -88,10 +89,12 @@ void readFromColourSensor()
 void readFromRaspberryPi() {
 	while(1) 
 	{
-		char* message = Serial.read();
-		double* values = get_values_from_message(message);
+		String message = Serial.readStringUntil('\n');
+		char* message_char;
+		message.toCharArray(message_char, message.length())
+		int* values = get_values_from_message(message_char);
 	 	//analogwrite
-		if(values[3] == 1.0)
+		if(values[3] == 1)
 		{
 			free(values);
 			break;
