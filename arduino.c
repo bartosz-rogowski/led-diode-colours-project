@@ -93,7 +93,9 @@ void readFromRaspberryPi() {
 		char* message_char;
 		message.toCharArray(message_char, message.length())
 		int* values = get_values_from_message(message_char);
-	 	//analogwrite
+	 	analogWrite(led_R, values[0]);
+		analogWrite(led_G, values[1]);
+		analogWrite(led_B, values[2]);
 		if(values[3] == 1)
 		{
 			free(values);
